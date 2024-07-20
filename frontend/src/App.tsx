@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 // import React from "react";
 import  "./App.css";
 import { Login } from "./pages/Login";
-import { SinUp } from "./pages/SinUp";
+import { SignUp } from "./pages/SignUp";
 import { Home } from "./pages/Home";
 import { CompanyAdd } from "./pages/CompanyAdd";
 import { Company } from "./pages/Company";
@@ -16,8 +16,8 @@ const App = () => {
 		<div>
 			<Routes>
 				<Route path="/login" element={<Login />} />
-				<Route path="/sinup" element={<SinUp />} />
-				<Route path = "/home" element = {<Home />} />
+				<Route path="/signup" element={<SignUp />} />
+				<Route path = "/" element = {<Home />} />
 				<Route path = "/companyadd" element = {<CompanyAdd />}/>
                 <Route path = "/company" element = {<Company/>} />
                 <Route path = "/changeflow" element = {<ChangeFlow/>} />
