@@ -12,6 +12,8 @@ import Paper from '@mui/material/Paper';
 export const Home = () => {
     const message1 = "アイコン"
     const message2 = "追加"
+    const message3  = "会社名"
+    const message4 = "企業追加"
     return (
     <div>
         <Grid container alignItems= "center" justifyContent = "center">
@@ -33,31 +35,31 @@ export const Home = () => {
         <br></br>
         <Grid container alignItems= "center" justifyContent = "center">
             <Stack spacing={30} direction="row" alignItems="center">
-                <CompanyButton/>
-                <CompanyButton/>
-                <CompanyButton/>
+                <CompanyButton text = {message3}/>
+                <CompanyButton text = {message3}/>
+                <CompanyButton text = {message3}/>
             </Stack>
         </Grid>
         <br></br>
         <Grid container alignItems= "center" justifyContent = "center">
             <Stack spacing={30} direction="row">
-                <CompanyButton/>
-                <CompanyButton/>
-                <CompanyButton/>
+            <CompanyButton text = {message3}/>
+            <CompanyButton text = {message3}/>
+            <CompanyButton text = {message3}/>
             </Stack>
         </Grid>
         <br></br>
         <Grid container alignItems= "center" justifyContent = "center">
             <Stack spacing={30} direction="row">
-                <CompanyButton/>
-                <CompanyButton/>
-                <CompanyButton/>
+            <CompanyButton text = {message3}/>
+            <CompanyButton text = {message3}/>
+            <CompanyButton text = {message3}/>
             </Stack>
         </Grid>
         <br></br>
         <br></br>
         <Grid container alignItems= "center" justifyContent = "center">
-            <Button variant="outlined">企業追加</Button>
+            <BasicButton text = {message4} variant="outlined"/>
         </Grid>
         <br></br>
         <br></br>
