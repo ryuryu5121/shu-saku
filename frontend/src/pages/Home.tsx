@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
 import { BasicButton } from "../components/BasicButton";
+import IconButton from "../components/IconButton";
 import { CompanyButton } from "../components/CompanyButton";
 import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
@@ -8,18 +9,22 @@ import Paper from '@mui/material/Paper';
 import { SyuCalendar } from "../components/SyuCalender";
 import { Task } from "../components/Task";
 
-export const Home: React.FC = () => {
+export const Home = () => {
     const navigate = useNavigate();
-    const message1 = "アイコン"
-    const message3  = "会社名"
-    const message4 = "企業追加"
+    const iconImageUrl = process.env.PUBLIC_URL + '/images/sakura.jpg'; // publicフォルダ内の画像のパス
+    const message3  = "会社名";
+    const message4 = "企業追加";
 
     const handleCompanyButtonClick = () => {
         navigate('/company');
     };
 
     const handleAddButtonClick = () => {
-        navigate('/companyadd');
+        navigate('/InputMail');
+    };
+
+    const handleIconButtonClick = () => {
+        
     };
 
     return (
@@ -30,7 +35,7 @@ export const Home: React.FC = () => {
             <Grid container alignItems="center" justifyContent="center">
                 <Grid item xs={2}></Grid>
                 <Grid item xs={3}>
-                    <BasicButton text={message1}/>
+                    <IconButton imageUrl={iconImageUrl} onClick={handleIconButtonClick} />
                 </Grid>
                 <Grid item xs={3}>
                     <p>名前</p>
