@@ -1,0 +1,85 @@
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .content-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    text-align: center;
+    color: #0066cc;
+    margin-bottom: 20px;
+  }
+  
+  .main-image {
+    display: block;
+    width: 80%; /* 幅を80%に設定 (必要に応じて調整してください) */
+    max-width: 800px; /* 最大幅を設定 (必要に応じて調整してください) */
+    height: auto;
+    margin: 0 auto 20px; /* 上下のマージンは0と20px、左右はautoで中央揃え */
+  }
+  
+  .login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* .checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .checkbox-group label {
+    margin-left: 5px;
+  } */
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* .warning {
+    font-size: 12px;
+    margin-top: 15px;
+  } */
+  
+  .forgot-link {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    color: #0066cc;
+    text-decoration: none;
+  }

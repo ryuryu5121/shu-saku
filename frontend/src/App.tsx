@@ -8,7 +8,7 @@ import { CompanyAdd } from "./pages/CompanyAdd";
 import { Company } from "./pages/Company";
 import { ChangeFlow } from "./pages/ChangeFlow";
 import { AddFlow } from "./pages/AddFlow";
-import { Allflow } from "./pages/AllFlow";
+import { AllFlow } from "./pages/AllFlow";
 
 
 const App = () => {
@@ -17,12 +17,12 @@ const App = () => {
 			<Routes>
 				<Route path="/login" element={<Login />} />
 				<Route path="/sinup" element={<SinUp />} />
-				<Route path = "/" element = {<Home />} />
+				<Route path = "/home" element = {<Home />} />
 				<Route path = "/companyadd" element = {<CompanyAdd />}/>
                 <Route path = "/company" element = {<Company/>} />
                 <Route path = "/changeflow" element = {<ChangeFlow/>} />
                 <Route path = "addflow" element = {<AddFlow/>} />
-                <Route path = "allflow" element = {<Allflow/>}/>
+                <Route path = "allflow" element = {<AllFlow/>}/>
 			</Routes>
 
 		</div>
