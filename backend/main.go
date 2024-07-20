@@ -19,7 +19,7 @@ func main() {
 	r.Use(cors.New(config))
 
 	r.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, "Hello, World!")
+		c.String(http.StatusOK, "Hello member")
 	})
 
 	port := os.Getenv("PORT")

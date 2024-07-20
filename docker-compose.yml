@@ -7,6 +7,8 @@ services:
       - "8080:8080"
     depends_on:
       - db
+    volumes:
+      - ./backend:/app
     environment:
       - DB_HOST=${DB_HOST}
       - DB_USER=${POSTGRES_USER}
@@ -22,6 +24,13 @@ services:
       - "3000:3000"
     depends_on:
       - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+      - FAST_REFRESH=false
     env_file:
       - .env
 
