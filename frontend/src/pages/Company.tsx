@@ -29,14 +29,15 @@ export const Company: React.FC = () => {
             <div className="header">
                 <h1 className="company-title">企業名</h1>
                 <div className="my-page-button">
-                    <Button 
-                        variant="contained" 
-                        color="primary" 
-                        onClick={handleMyPageClick}
-                    >
-                        マイページ
-                    </Button>
-                </div>
+                <a href="http://localhost:3000" target="_blank" rel="noopener noreferrer">
+                <Button 
+                    variant="contained" 
+                    color="primary"
+                >
+                    マイページ
+                </Button>
+            </a>
+        </div>
             </div>
             <div className="content">
                 <div className="recruitment-flow">
