@@ -12,8 +12,12 @@ export const Company: React.FC = () => {
     const [showJoke, setShowJoke] = useState(false);
     const [showSparkle, setShowSparkle] = useState(false);
 
+    const handleHomeClick = () => {
+        window.location.href = 'http://localhost:3000'; // ホームページに移動
+    };
+
     const handleMyPageClick = () => {
-        window.location.href = 'https://example.com'; // 外部リンクに移動
+        window.location.href = 'http://localhost:3000/mypage'; // マイページに移動
     };
 
     const handleReflectionChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -52,15 +56,21 @@ export const Company: React.FC = () => {
         <div className="recruitment-page">
             <div className="header">
                 <h1 className="company-title">企業名</h1>
-                <div className="my-page-button">
-                    <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-                        <Button 
-                            variant="contained" 
-                            color="primary"
-                        >
-                            マイページ
-                        </Button>
-                    </a>
+                <div className="button-group">
+                    <Button 
+                        variant="contained" 
+                        color="secondary"
+                        onClick={handleHomeClick}
+                    >
+                        ホームへ戻る
+                    </Button>
+                    <Button 
+                        variant="contained" 
+                        color="primary"
+                        onClick={handleMyPageClick}
+                    >
+                        マイページ
+                    </Button>
                 </div>
             </div>
             <div className="content">
