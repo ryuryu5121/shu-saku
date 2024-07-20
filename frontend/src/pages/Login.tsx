@@ -1,5 +1,6 @@
 import React, { useState, FormEvent } from 'react';
 import './Login.css'; 
+import './Back.css'
 
 
 
@@ -13,9 +14,12 @@ export const Login = () => {
   };
 
   return (
-    <div className="page-container">
+    <div className="page-container backcolor">
       <div className="content-container">
-        <h1 className="title">就サク My Page 2026</h1>
+        <h1 className="title">
+          <span className="title-ja">就サク</span> 
+          <span className="title-en">My Page 2026</span>
+        </h1>
         <img src="/images/man.jpeg" alt="Life Anew" className="main-image" />
         <div className="login-container">
           <form onSubmit={handleSubmit}>
