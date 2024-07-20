@@ -19,7 +19,7 @@ export const Home: React.FC = () => {
     };
 
     const handleAddButtonClick = () => {
-        navigate('/companyadd');
+        navigate('/inputmail');
     };
 
     return (
