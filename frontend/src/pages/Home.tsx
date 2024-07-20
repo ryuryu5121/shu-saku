@@ -5,6 +5,7 @@ import { CompanyButton } from "../components/CompanyButton"
 import Stack from '@mui/material/Stack';
 import { SyuCalendar } from "../components/SyuCalender"
 import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 
 export const Home = () => {
     return (
@@ -25,6 +26,7 @@ export const Home = () => {
             <Grid item xs={1}>
             </Grid>
         </Grid>
+        <br></br>
         <Grid container alignItems= "center" justifyContent = "center">
             <Stack spacing={30} direction="row" alignItems="center">
                 <CompanyButton/>
@@ -49,6 +51,10 @@ export const Home = () => {
             </Stack>
         </Grid>
         <br></br>
+        <br></br>
+        <Grid container alignItems= "center" justifyContent = "center">
+            <Button variant="outlined">企業追加</Button>
+        </Grid>
         <br></br>
         <br></br>
         <Grid container alignItems= "center" justifyContent = "center">
