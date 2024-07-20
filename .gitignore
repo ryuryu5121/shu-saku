@@ -1,2 +1,4 @@
 .env
 db/data/
+node_modules/
+backend/tmp/
