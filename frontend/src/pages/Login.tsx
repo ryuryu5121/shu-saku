@@ -1,16 +1,20 @@
 import React, { useState, FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css'; 
-import './Back.css'
-
-
+import './Back.css';
 
 export const Login = () => {
   const [id, setId] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('ID:', id, 'Password:', password);
+    // ログインのロジックをここに追加します
+
+    // ログイン成功後にホームページにリダイレクト
+    navigate('/');
   };
 
   return (
@@ -41,22 +45,11 @@ export const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-  
             <button type="submit">ログイン</button>
           </form>
-          {/* <p className="warning">
-            ご自分以外の第三者が使用する可能性のあるパソコン（学校・会社・インターネットカフェ、図書館等）をご利用の場合は、チェックを外してログインされることをお奨めします。
-          </p> */}
-          <a href="#" className="forgot-link">▶ ID・PASSWORDを忘れた方はこちら</a>
+          {/* <a href="#" className="forgot-link">▶ ID・PASSWORDを忘れた方はこちら</a> */}
         </div>
       </div>
     </div>
   );
 };
-
-
-// <div className="checkbox-group">
-// <input type="checkbox" id="remember" />
-// <label htmlFor="remember">ログイン情報（ID）を記憶する</label>
-// </div>
-
