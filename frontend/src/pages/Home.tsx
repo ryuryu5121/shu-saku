@@ -7,7 +7,7 @@ import { SyuCalendar } from "../components/SyuCalender";
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import { Task } from "../components/Task";
-// import { Try } from "../components/Try";
+import Paper from '@mui/material/Paper';
 
 export const Home = () => {
     const message1 = "アイコン"
@@ -61,15 +61,24 @@ export const Home = () => {
         </Grid>
         <br></br>
         <br></br>
-        <Grid container alignItems= "center" justifyContent = "center">
-            <Stack spacing={30} direction="row">
-            <SyuCalendar/>
-            <Grid item xs={3}>
-                <Task/>
+            <Grid container alignItems= "center" justifyContent = "center">
+                {/* <Stack spacing={30} direction="row"> */}
+                <Grid item xs={5}>
+                    <Paper elevation={3} style={{ padding: '50px', width: '300px' }}>
+                        <SyuCalendar />
+                        </Paper>
+                </Grid>
+                <Grid item xs={3}>
+                <Paper elevation={3} style={{ padding: '20px', width: '400px' }}>
+                        <Task />
+                    </Paper>
+                </Grid>
+                {/* </Stack> */}
             </Grid>
-            </Stack>
-        </Grid>
-        {/* <Try/> */}
     </div>
     );
   };
+
+ 
+//                     <Task/>
+//                 </Grid>

@@ -13,6 +13,12 @@ export const Task = () => {
         setTodoText(event.target.value);
     };
 
+    const onClickDelete = (index) => {
+        const deletedTodoList = [...todoList];
+        deletedTodoList.splice(index, 1);
+        setTodoList(deletedTodoList);
+      };
+
     const onClickAdd = () => {
         if (todoText === "") return;
         const newTodo = {
@@ -20,7 +26,6 @@ export const Task = () => {
           status: "作業中"
         }
         // DOMが更新される
-        // todoList.push(newTodo);
         const newTodoList = [...todoList, newTodo];
         // 新しいリストを状態として設定
         setTodoList(newTodoList);
@@ -30,24 +35,23 @@ export const Task = () => {
 
     return (
         <>
+            <h1>タスク</h1>
             <div>
-                <h1>タスク</h1>
                 <table>
                     <tbody id="todo-body">  
                         {todoList.map((todo, index) => (
                         <tr>
                             <td>{todo.comment}</td>
-                            <td><BasicButton text = {message}/></td>
+                            <td><BasicButton text = {message} onClick = {() => onClickDelete(index)}/></td>
                         </tr>
                         ))}
                     </tbody>
                 </table>
             </div>
 
-            <h2>タスクの追加</h2>
             <div>
                 <TextField
-                    label = "task"
+                    label = "taskの追加"
                     variant = "outlined"
                     value = {todoText}
                     onChange = {onChangeTodoText}
