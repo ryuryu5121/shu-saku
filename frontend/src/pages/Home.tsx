@@ -1,13 +1,17 @@
 import React from "react";
 import { BasicButton } from "../components/BasicButton";
 import { IconButton } from '@mui/material';
-import { CompanyButton } from "../components/CompanyButton"
+import { CompanyButton } from "../components/CompanyButton";
 import Stack from '@mui/material/Stack';
-import { SyuCalendar } from "../components/SyuCalender"
+import { SyuCalendar } from "../components/SyuCalender";
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import { Task } from "../components/Task";
+// import { Try } from "../components/Try";
 
 export const Home = () => {
+    const message1 = "アイコン"
+    const message2 = "追加"
     return (
     <div>
         <Grid container alignItems= "center" justifyContent = "center">
@@ -17,7 +21,7 @@ export const Home = () => {
             <Grid item xs={2}>
             </Grid>
             <Grid item xs={3}>
-                <BasicButton />
+                <BasicButton text = {message1}/>
             </Grid>
             <Grid item xs={3}>
                 <p>名前</p>
@@ -58,8 +62,14 @@ export const Home = () => {
         <br></br>
         <br></br>
         <Grid container alignItems= "center" justifyContent = "center">
+            <Stack spacing={30} direction="row">
             <SyuCalendar/>
+            <Grid item xs={3}>
+                <Task/>
+            </Grid>
+            </Stack>
         </Grid>
+        {/* <Try/> */}
     </div>
     );
   };

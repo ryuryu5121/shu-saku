@@ -7,8 +7,10 @@ import Typography from '@mui/material/Typography';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box'; // Box コンポーネントをインポート
+import { useNavigate } from "react-router-dom";
 
 export const SignUp = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -18,8 +20,11 @@ export const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    // e: React.FormEvent<HTMLFormElement>
+    // event.preventDefault();
+    // console.log()
+    navigate('/login');
     // ここでフォームの送信処理を行います
   };
 
