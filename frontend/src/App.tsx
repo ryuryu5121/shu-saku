@@ -8,7 +8,8 @@ import { CompanyAdd } from "./pages/CompanyAdd";
 import { Company } from "./pages/Company";
 import { ChangeFlow } from "./pages/ChangeFlow";
 import { AddFlow } from "./pages/AddFlow";
-import { AllFlow } from "./pages/AllFlow";
+import { Allflow } from "./pages/AllFlow";
+import InputMail from "./pages/InputMail";
 
 
 const App = () => {
@@ -22,7 +23,8 @@ const App = () => {
                 <Route path = "/company" element = {<Company/>} />
                 <Route path = "/changeflow" element = {<ChangeFlow/>} />
                 <Route path = "addflow" element = {<AddFlow/>} />
-                <Route path = "allflow" element = {<AllFlow/>}/>
+                <Route path = "allflow" element = {<Allflow/>}/>
+				<Route path = "/inputmail" element = {<InputMail/>}/>
 			</Routes>
 
 		</div>
