@@ -1,0 +1,60 @@
+.recruitment-page {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.company-title {
+    margin-left: 190px;
+    font-weight: bold;
+}
+
+.my-page-button {
+    margin: 20px 0;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.recruitment-flow, .reflection-section {
+    width: 48%;
+}
+
+.recruitment-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.arrow {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 36px;
+    color: lightskyblue;
+}
+
+.reflection-section {
+    margin-top: 105px;
+}
+
+.feedback {
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.reflection-section textarea {
+    width: 100%;
+    height: 500px;
+    padding: 10px;
+    margin-top: 10px;
+}
