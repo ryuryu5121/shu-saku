@@ -11,13 +11,25 @@ export const Company: React.FC = () => {
     const [failedIndex, setFailedIndex] = useState<number | null>(null);
     const [showJoke, setShowJoke] = useState(false);
     const [showSparkle, setShowSparkle] = useState(false);
+    const [companyMyPageUrl, setCompanyMyPageUrl] = useState('https://job.axol.jp/qd/s/ts_26/mypage/login'); // 企業のマイページURLを状態として管理
+    const [joke, setJoke] = useState('');
+
+    const jokes = [
+        '内定無い。でも泣いていない。',
+        '牛とにわとりは、モーケッコウ',
+        '国道で屁、こくどー！',
+        'ニジマス　食べます　いただきます',
+        '何でも自分のものにしたがる国　オランダ'
+
+
+    ];
 
     const handleHomeClick = () => {
         window.location.href = 'http://localhost:3000'; // ホームページに移動
     };
 
     const handleMyPageClick = () => {
-        window.location.href = 'http://localhost:3000/mypage'; // マイページに移動
+        window.location.href = companyMyPageUrl; // 企業のマイページに移動
     };
 
     const handleReflectionChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -42,6 +54,7 @@ export const Company: React.FC = () => {
     const handleFailClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
         setFailedIndex(clickedIndex + 1); // 次のフローを不合格に設定
+        setJoke(jokes[Math.floor(Math.random() * jokes.length)]);
         setShowJoke(true);
     };
 
@@ -89,7 +102,7 @@ export const Company: React.FC = () => {
                     ))}
                 </div>
                 <div className="reflection-section">
-                    <h3 className='feedback'>フィードバック</h3>
+                    <h3 className='feedback'>メモ</h3>
                     <textarea 
                         value={reflection} 
                         onChange={handleReflectionChange}
@@ -130,12 +143,12 @@ export const Company: React.FC = () => {
             </div>
             {showJoke && (
                 <div className="joke" onClick={handleJokeClick}>
-                    布団が吹っ飛んだ
+                    {joke}
                 </div>
             )}
             {showSparkle && (
                 <div className="sparkle">
-                    ✨✨✨おめでとうございます！内定です！✨✨✨
+                    ✨✨✨内定おめでとう！✨✨✨
                 </div>
             )}
         </div>
