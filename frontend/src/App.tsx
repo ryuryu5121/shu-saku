@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+// import React from "react";
+import "./App.css";
+import { Login } from "./pages/Login";
+import { SignUp } from "./pages/SignUp";
+import { Home } from "./pages/Home";
+import { CompanyAdd } from "./pages/CompanyAdd";
+import { Company } from "./pages/Company";
+import { ChangeFlow } from "./pages/ChangeFlow";
+import { AddFlow } from "./pages/AddFlow";
+import { Allflow } from "./pages/AllFlow";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+const App = () => {
+	return (
+		<div>
+			<Routes>
+				<Route path="/login" element={<Login />} />
+				<Route path="/signup" element={<SignUp />} />
+				<Route path = "/" element = {<Home />} />
+				<Route path = "/companyadd" element = {<CompanyAdd />}/>
+                <Route path = "/company" element = {<Company/>} />
+                <Route path = "/changeflow" element = {<ChangeFlow/>} />
+                <Route path = "addflow" element = {<AddFlow/>} />
+                <Route path = "allflow" element = {<Allflow/>}/>
+			</Routes>
+
+		</div>
+	);
+};
 
 export default App;
