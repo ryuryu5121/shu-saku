@@ -53,7 +53,7 @@ export const CompanyAdd = () => {
             mypageid: mypageid,
             mypagepassword: mypagepassword,
             mypageurl: mypageUrl,
-            status: id,
+            status: "0",
         }
     };
 
