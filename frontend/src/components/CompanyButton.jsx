@@ -1,8 +1,9 @@
 import Button from '@mui/material/Button';
 
 
-export const CompanyButton = () => {
+export const CompanyButton = (props) => {
   return (
-    <Button variant="contained">会社名</Button>
+    <Button variant="contained"  onClick = {props.onClick}>
+      {props.text}</Button>
   );
 };

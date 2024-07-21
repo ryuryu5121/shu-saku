@@ -1,9 +1,9 @@
 import React from "react";
 
-export const Allflow = () => {
+export const AllFlow = () => {
     return (
     <div>
-        <h1>Allflow</h1>
+        <h1>AllFlow</h1>
     </div>
     );
   };
