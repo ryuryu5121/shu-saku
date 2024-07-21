@@ -15,7 +15,13 @@ export const Company: React.FC = () => {
     const [joke, setJoke] = useState('');
 
     const jokes = [
-        '内定無い。でも泣いていない。'
+        '内定無い。でも泣いていない。',
+        '牛とにわとりは、モーケッコウ',
+        '国道で屁、こくどー！',
+        'ニジマス　食べます　いただきます',
+        '何でも自分のものにしたがる国　オランダ'
+
+
     ];
 
     const handleHomeClick = () => {
