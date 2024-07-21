@@ -26,7 +26,7 @@ func GetRouter() *gin.Engine {
     // r.GET("/mypage/:id", jwtMiddleware.MiddlewareFunc(), mypageHandler)
 	r.GET("/users/:id", ShowHaveSelection)
 	r.GET("/users/:id/companies/:company_id", ShowCompanyDetail)
-	r.POST("/companies", SetCompanyData)
+	r.POST("/companies", SetSelectionCompanyData)
 
 	return r
 }
