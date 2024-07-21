@@ -47,6 +47,16 @@ export const CompanyAdd = () => {
     const [id, setId] = useState('');
     const navigate = useNavigate();
 
+    const name = {
+        company: {
+            companyName: companyName,
+            mypageid: mypageid,
+            mypagepassword: mypagepassword,
+            mypageurl: mypageUrl,
+            status: id,
+        }
+    };
+
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         if (companyName === "" || mypageUrl === "" || mypageid === "" || mypagepassword === "" ) {
             alert("入力されていない箇所があります");
@@ -67,7 +77,7 @@ export const CompanyAdd = () => {
                 }
             });
     
-            const data: CompanyInfo = resp.data;
+            // const data: CompanyInfo = resp.data;
             // レスポンスの処理
         } catch (error) {
             // エラーハンドリング
@@ -75,10 +85,35 @@ export const CompanyAdd = () => {
         }
     };
 
-    const handleChangePage = () => {
-        navigate("/");
+    const handleChangePage = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): Promise<void>  => {
+        if (companyName === "" || mypageUrl === "" || mypageid === "" || mypagepassword === "" ) {
+            alert("入力されていない箇所があります");
+            console.log(name)
+            // navigate('/companyadd');
+            e.preventDefault();
+            return;
+        }
+        console.log(name)
+        navigate('/');
+        try {
+            const resp = axios.post("/api/signin", {
+                company: {
+                    companyName: companyName,
+                    mypageid: mypageid,
+                    mypagepassword: mypagepassword,
+                    mypageurl: mypageUrl,
+                    status: id,
+                }
+            });
+        
+                // const data: CompanyInfo = resp.data;
+                // console.log(name);
+                // レスポンスの処理
+        } catch (error) {
+                // エラーハンドリング
+            console.error(error);
+        }
     };
-    
 
     return (
         <div style={{ backgroundColor: 'rgb(244, 248, 248)' }}>
