@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { Button, TextField, Box, Typography, Container, Grid, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import axios, { HttpStatusCode } from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CustomButton = styled(Button)(({ theme }) => ({
   fontWeight: 'bold',
@@ -26,7 +28,7 @@ const EmailParser = () => {
   const [editablePersonalId, setEditablePersonalId] = useState('');
   const [myPageUrl, setMyPageUrl] = useState('');
   const [editableMyPageUrl, setEditableMyPageUrl] = useState('');
-  const [password, setPassword] = useState('');
+  const [mypagepassword, setMypagePassword] = useState('');
   const [companyName, setCompanyName] = useState('');
 
   const handleParseEmail = () => {
@@ -56,7 +58,7 @@ const EmailParser = () => {
     setEditablePersonalId('');
     setMyPageUrl('');
     setEditableMyPageUrl('');
-    setPassword('');
+    setMypagePassword('');
     setCompanyName('');
   };
 
@@ -68,7 +70,7 @@ const EmailParser = () => {
     <div style={{ backgroundColor: '#f0f4f8', minHeight: '100vh', padding: '40px 20px' }}>
       <Container maxWidth="md">
         <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', color: '#333', mb: 4, textAlign: 'center' }}>
-          新規企業情報の追加
+          企業情報の追加
         </Typography>
         <Grid container spacing={6} alignItems="center">
           <Grid item xs={12} md={6}>
@@ -132,8 +134,8 @@ const EmailParser = () => {
               <TextField
                 variant="outlined"
                 fullWidth
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={mypagepassword}
+                onChange={(e) => setMypagePassword(e.target.value)}
                 type="password"
                 sx={{ mb: 2 }}
               />

@@ -4,7 +4,7 @@ WORKDIR /app
 
 # react-app ディレクトリ内のファイルをコピー
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm clean-install
 
 COPY . .
 

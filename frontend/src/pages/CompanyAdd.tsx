@@ -5,6 +5,8 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/system';
+import axios, { HttpStatusCode } from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CustomContainer = styled(Container)({
     backgroundColor: 'rgb(244, 248, 248)', // 画面全体の背景色
@@ -20,15 +22,97 @@ const StyledForm = styled('form')({
     padding: '20px',
 });
 
+type CompanyInfo = {
+    company: {
+        companyName: string;
+        mypageid: string;
+        mypagepassword: string;
+        mypageurl: string;
+        status: number;
+    }
+}
+
+type Props = {
+    belong: string;
+    CompanyInfo : string;
+    username: string;
+  };
+  
+
 export const CompanyAdd = () => {
     const [companyName, setCompanyName] = useState('');
     const [mypageUrl, setMypageUrl] = useState('');
+    const [mypageid, setMypageId] = useState('');
+    const [mypagepassword, setMypagePassword] = useState('');
     const [id, setId] = useState('');
+    const navigate = useNavigate();
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const name = {
+        company: {
+            companyName: companyName,
+            mypageid: mypageid,
+            mypagepassword: mypagepassword,
+            mypageurl: mypageUrl,
+            status: "0",
+        }
+    };
+
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        if (companyName === "" || mypageUrl === "" || mypageid === "" || mypagepassword === "" ) {
+            alert("入力されていない箇所があります");
+            return;
+          }
         e.preventDefault();
         // ここで入力データを処理します。例: API に送信
-        console.log(companyName, mypageUrl, id);
+        console.log(companyName, mypageUrl, id, mypageid, mypagepassword);
+
+        try {
+            const resp = await axios.post("/api/signin", {
+                company: {
+                    companyName: companyName,
+                    mypageid: mypageid,
+                    mypagepassword: mypagepassword,
+                    mypageurl: mypageUrl,
+                    status: id,
+                }
+            });
+    
+            // const data: CompanyInfo = resp.data;
+            // レスポンスの処理
+        } catch (error) {
+            // エラーハンドリング
+            console.error(error);
+        }
+    };
+
+    const handleChangePage = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): Promise<void>  => {
+        if (companyName === "" || mypageUrl === "" || mypageid === "" || mypagepassword === "" ) {
+            alert("入力されていない箇所があります");
+            console.log(name)
+            // navigate('/companyadd');
+            e.preventDefault();
+            return;
+        }
+        console.log(name)
+        navigate('/');
+        try {
+            const resp = axios.post("/api/signin", {
+                company: {
+                    companyName: companyName,
+                    mypageid: mypageid,
+                    mypagepassword: mypagepassword,
+                    mypageurl: mypageUrl,
+                    status: id,
+                }
+            });
+        
+                // const data: CompanyInfo = resp.data;
+                // console.log(name);
+                // レスポンスの処理
+        } catch (error) {
+                // エラーハンドリング
+            console.error(error);
+        }
     };
 
     return (
@@ -67,8 +151,8 @@ export const CompanyAdd = () => {
                                 style={{ width: '500px' }}
                                 label="マイページURL"
                                 variant="outlined"
-                                value={companyName}
-                                onChange={(e) => setCompanyName(e.target.value)}
+                                value={mypageUrl}
+                                onChange={(e) => setMypageUrl(e.target.value)}
                             />
                         </StyledForm>
                     </Grid>
@@ -78,8 +162,8 @@ export const CompanyAdd = () => {
                                 style={{ width: '500px' }}
                                 label="ID"
                                 variant="outlined"
-                                value={companyName}
-                                onChange={(e) => setCompanyName(e.target.value)}
+                                value={mypageid}
+                                onChange={(e) => setMypageId(e.target.value)}
                             />
                         </StyledForm>
                     </Grid>
@@ -89,8 +173,8 @@ export const CompanyAdd = () => {
                                 style={{ width: '500px' }}
                                 label="Password"
                                 variant="outlined"
-                                value={companyName}
-                                onChange={(e) => setCompanyName(e.target.value)}
+                                value={mypagepassword}
+                                onChange={(e) => setMypagePassword(e.target.value)}
                             />
                         </StyledForm>
                     </Grid>
@@ -107,6 +191,7 @@ export const CompanyAdd = () => {
                             variant="contained"
                             color="primary"
                             type="submit"
+                            onClick = {handleChangePage}
                             >
                             追加
                         </Button>
