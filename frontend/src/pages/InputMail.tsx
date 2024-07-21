@@ -60,6 +60,10 @@ const EmailParser = () => {
     setCompanyName('');
   };
 
+  const handleGoBack = () => {
+    window.location.href = 'http://localhost:3000';
+  };
+
   return (
     <div style={{ backgroundColor: '#f0f4f8', minHeight: '100vh', padding: '40px 20px' }}>
       <Container maxWidth="md">
@@ -136,10 +140,8 @@ const EmailParser = () => {
             </CustomPaper>
           </Grid>
         </Grid>
-        <br></br>
-        <br></br>
         <Box mt={4} display="flex" justifyContent="center" gap={14}>
-          <CustomButton variant="outlined" color="primary" sx={{ fontSize: '1rem', padding: '10px 40px' }}>
+          <CustomButton variant="outlined" color="primary" sx={{ fontSize: '1rem', padding: '10px 40px' }} onClick={handleGoBack}>
             戻る
           </CustomButton>
           <CustomButton variant="contained" color="primary" sx={{ fontSize: '1rem', padding: '10px 40px' }}>

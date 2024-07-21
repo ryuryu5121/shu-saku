@@ -2,6 +2,7 @@
     padding: 20px;
     max-width: 1000px;
     margin: 0 auto;
+    position: relative;
 }
 
 .header {
@@ -10,9 +11,16 @@
     align-items: center;
 }
 
+.button-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    white-space: nowrap; /* これを追加してボタン内の改行を防止 */
+}
+
 .company-title {
-    margin-left: 190px;
     font-weight: bold;
+    margin-left: 190px;
 }
 
 .my-page-button {
@@ -43,18 +51,63 @@
 }
 
 .reflection-section {
-    margin-top: 105px;
+    margin-top: 20px; /* 隙間を減らす */
 }
 
 .feedback {
     font-size: 30px;
     font-weight: bold;
-
 }
 
 .reflection-section textarea {
     width: 100%;
     height: 500px;
     padding: 10px;
+    margin-top: 5px; /* 隙間を減らす */
+}
+
+.next-flow {
+    margin-top: 20px;
+}
+
+.result-buttons {
+    display: flex;
+    gap: 10px;
     margin-top: 10px;
+}
+
+.result-button {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.joke {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    font-weight: bold;
+    color: red;
+    background-color: yellow;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.sparkle {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    font-weight: bold;
+    color: gold;
+    background-color: black;
+    padding: 20px;
+    border: 2px solid gold;
+    border-radius: 10px;
+    z-index: 1000;
 }
